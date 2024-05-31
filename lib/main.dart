@@ -77,7 +77,8 @@ class _Paginaprincipal extends State<Paginaprincipal> {
             if (_nombre.isNotEmpty)
               Text(
                 '$_nombre',
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             const SizedBox(height: 20),
             ElevatedButton(
@@ -91,7 +92,8 @@ class _Paginaprincipal extends State<Paginaprincipal> {
                         onChanged: (value) {
                           _setNombre(value);
                         },
-                        decoration: const InputDecoration(hintText: 'Escribe tu nombre'),
+                        decoration: const InputDecoration(
+                            hintText: 'Cual es tu nombre'),
                       ),
                     );
                   },
