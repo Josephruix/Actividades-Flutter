@@ -10,28 +10,28 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Actividad 1',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const Paginaprincipal(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class Paginaprincipal extends StatefulWidget {
+  const Paginaprincipal({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Paginaprincipal> createState() => _Paginaprincipal();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  String _username = '';
+class _Paginaprincipal extends State<Paginaprincipal> {
+  String _nombre = '';
 
-  void _setUsername(String username) {
+  void _setNombre(String nombre) {
     setState(() {
-      _username = username;
+      _nombre = nombre;
     });
   }
 
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Aplicacion de nombres'),
+        title: const Text('Actividad 1'),
       ),
       drawer: Drawer(
         child: ListView(
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const Text('Pagna  2'),
+              title: const Text('Pagina 2'),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -71,12 +71,12 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Bievenido',
+              'Bienvenido',
               style: TextStyle(fontSize: 24),
             ),
-            if (_username.isNotEmpty)
+            if (_nombre.isNotEmpty)
               Text(
-                '$_username',
+                '$_nombre',
                 style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             const SizedBox(height: 20),
@@ -86,18 +86,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog(
-                      title: const Text('Escriba su nombre'),
+                      title: const Text('Escribe tu nombre'),
                       content: TextField(
                         onChanged: (value) {
-                          _setUsername(value);
+                          _setNombre(value);
                         },
-                        decoration: const InputDecoration(hintText: 'Enter your name'),
+                        decoration: const InputDecoration(hintText: 'Escribe tu nombre'),
                       ),
                     );
                   },
                 );
               },
-              child: const Text('Escriba su nombre'),
+              child: const Text('Escribe tu nombre'),
             ),
           ],
         ),
